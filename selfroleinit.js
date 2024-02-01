@@ -13,8 +13,7 @@ module.exports = async function selfroleinit(ChannelID, bot, roles){
 
                 {
                     name: "About the Bot",
-                    value: "This Bot is created by <@292221048987058176>, feel free to send some feedback for better functionality or if you found a bug in <#1128049934923477123>." +
-                        "\nThis bot is available as a GitLab Repository, if you are a curious Nerd you can check out the Code [here](https://gitlab.com/Loommix/selfroles-js)."
+                    value: "This Bot is created by <@292221048987058176>, feel free to send some feedback for better functionality or if you found a bug in <#1128049934923477123>."
                 }
             ],
             color: 0xbd93f9
