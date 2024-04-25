@@ -1,4 +1,4 @@
-const config = require("./config");
+const config = require("./config/config.js");
 module.exports = async function rolesaddrem(bot, interaction, roles, config){
 
     let add = 1; //add is a check later, if it is 1, role can be added

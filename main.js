@@ -1,5 +1,5 @@
 const Eris = require("eris");
-const config = require("./config.js");
+const config = require("./config/config.js");
 const selfroleinit = require("./selfroleinit");
 const rolesaddrem = require("./roleaddrem");
 
