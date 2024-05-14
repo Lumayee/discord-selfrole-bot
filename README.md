@@ -16,6 +16,24 @@ Example of the messages from the Bot, after you changed your roles
 
 ![RoleMessages](Pictures/RoleMessages.png)
 
+## Usage
+
+I use Docker to run this.
+
+docker-compose.yaml
+```yaml
+services:
+  discord-selfrole-bot:
+    image: lumaye/discord-selfrole-bot:0.1
+    restart: unless-stopped
+    container_name: discord-selfrole-bot
+    volumes:
+      - ./selfrole-config/:/app/config
+```
+
+You just have to put your config.js in the config folder. 
+
+
 
 ## Documentation i used
 
@@ -76,31 +94,7 @@ This Example here is from the `roles.js` that is in this Repository.
 - `EmoteID: ""`: only has to be used if `CustomEmote` is set to `true`, contains the ID of the custom emote
 - `CustomEmote: true/false`: Has to be used when using any emotes, set to `true` if you want to use Discord custom emotes, or to `false` when just default emotes are used.
 
-# Use as a systemd service
+# Work on the Code
+I'm using [Eris](https://abal.moe/Eris/) for this bot, if you want to work on the code you have to install it.
 
-Save this file as `felix-helper.service` in `/etc/systemd/system/`
-
-```
-[Unit]
-Description=felix-helper
-After=network-online.target
-Wants=network-online.target
-
-[Service]
-Type=simple
-User=root
-ExecStart=/usr/bin/node /home/user/path/to/felix-helper/main.js
-WorkingDirectory=/home/user/path/to/felix-helper/
-Restart=always
-RestartSec=120
-
-[Install]
-WantedBy=multi-user.target
-```
-| command                              | function                 |
-|--------------------------------------|--------------------------|
-| `sudo systemctl start felix-helper`  | start the Bot            |
-| `sudo systemctl stop felix-helper`   | stop the Bot             |
-| `sudo systemctl enable felix-helper` | enable start Bot on boot |
-| `sudo systemctl disable felix-helper` | disable start Bot on boot |
-
+If you want to create the container image yourself `docker build -t x/discord-selfrole-bot .`
